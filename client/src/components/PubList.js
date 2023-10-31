@@ -1,38 +1,34 @@
-import { Link } from 'react-router-dom';
+import {
+    Route, BrowserRouter as Router, Routes, Link,
+} from 'react-router-dom';
 import PubPreview from './PubPreview';
-// import PubData from '../data/pubData'
 import { useState, useEffect } from 'react';
+
 
 const PubList = () => {
     // const [pubs, setPubs] = useState([])
-    const [data, setData] = useState([])
+    const [pubs, setPubs] = useState([])
 
-    const getData = async () => {
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-        const resData = await res.json()
-        console.log(resData[0])
-        setData(resData)
+    const getpubs = async () => {
+        const res = await fetch('http://localhost:8000/pubs')
+        const resPubs = await res.json()
+        console.log(resPubs[0])
+        setPubs(resPubs)
     }
 
     useEffect(() => {
         console.log("useEffect ran")
-        getData()
-    })
+        getpubs()
+    }, [])
 
     return (
         <div className='PubsList'>
-            <Link>
-                <PubPreview />
-            </Link>
-            <ul>
-                {data.map((post) => (
-                    <div className="PubsList col-8 mb-5 ps-3 mx-auto corder rounded">
-                        <h1 className='display-5'>{post.title}</h1>
-                        <p className='lead'>{post.body}</p>
-                    </div>
-                ))}
-            </ul>
-
+            {pubs.map((pub) => (
+                // <Link exact path="/pubs" element={<PubPreview pub />} />
+                <Link key={pub.id} to={`/pubs/${pub.id}`}>
+                    <PubPreview pub />
+                </Link>
+            ))}
         </div>
     )
 }

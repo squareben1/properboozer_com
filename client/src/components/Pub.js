@@ -1,4 +1,4 @@
-const Pub = () => {
+const Pub = (props) => {
     return (
 
 
@@ -9,7 +9,7 @@ const Pub = () => {
                 <div className="row">
                     <div className="col-6">
                         <img src="" alt="Pub Image" />
-                        <h1 className="display-3 text-light">The Princess Louise, Holborn</h1>
+                        <h1 className="display-3 text-light">{props.name}</h1>
                     </div>
                 </div>
 
