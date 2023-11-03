@@ -1,3 +1,9 @@
+import { Link } from "react-router-dom";
+
+const hyphenateString = (string) => {
+    string.replaceAll(" ", "-").lower();
+}
+
 const PubPreview = (props) => {
     console.log(props)
     return (
