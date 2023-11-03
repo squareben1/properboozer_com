@@ -1,6 +1,4 @@
-import {
-    Route, BrowserRouter as Router, Routes, Link,
-} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import PubPreview from './PubPreview';
 import { useState, useEffect } from 'react';
 
@@ -24,10 +22,9 @@ const PubList = () => {
     return (
         <div className='PubsList'>
             {pubs.map((pub) => (
-                // <Link exact path="/pubs" element={<PubPreview pub />} />
-                <Link key={pub.id} to={`/pubs/${pub.id}`}>
-                    <PubPreview pub />
-                </Link>
+                // <Link key={pub.id} to={`/pubs/${pub.id}`}>
+                <PubPreview pub={pub} />
+                // </Link>
             ))}
         </div>
     )

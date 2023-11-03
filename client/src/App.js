@@ -13,12 +13,14 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/pubs" element={<PubList />} />
-        <Route path="/pubs/:id" element={<Pub />} />
-      </Routes>
+      <div className="App d-flex flex-column h-100 lead">
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/pubs" element={<PubList />} />
+          <Route path="/pubs/:url" element={<Pub />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
