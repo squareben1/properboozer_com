@@ -13,18 +13,15 @@ import Pub from "./components/Pub";
 import './App.css';
 
 function App() {
-  // api call on load
   const [pubs, setPubs] = useState([])
 
   const getpubs = async () => {
     const res = await fetch('http://localhost:8000/pubs')
     const resPubs = await res.json()
-    console.log(resPubs[0])
     setPubs(resPubs)
   }
 
   useEffect(() => {
-    console.log("useEffect ran")
     getpubs()
   }, [])
 
