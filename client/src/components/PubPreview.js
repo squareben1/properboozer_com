@@ -9,18 +9,12 @@ const PubPreview = (props) => {
     const pubIntro = props.pub.intro
     const pubImage = props.pub.images[0]
 
-    const alternateDir = () => {
-        console.log("call")
-        if ( pubId % 2 === 0 ) {
-            return "row align-items-center g-5 py-1"
-        }
-        return "row align-items-center g-5 py-1 flex-row-reverse"
-    }
+    const alternateFlowDirection = () => `row align-items-center g-5 py-1 ${pubId % 2 === 0 ? '' : ' flex-row-reverse'}`
 
     return (
         <div className="PubPreview">
             <div className="container col-8 px-4 py-1">
-                <div className={alternateDir()}>
+                <div className={alternateFlowDirection()}>
                     <div className="col-6">
                         <Link key={pubId} to={`/pubs/${pubUrl}`}>
                             <h1 className="display-5 fw-bold lh-1 mb-3">{pubUrl}</h1>
