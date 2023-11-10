@@ -1,21 +1,35 @@
+import { useContext } from 'react';
+import context from "../context/context"
 
 
 
-const Pub = (props) => {
+const Pub = () => {
+    const pubs = useContext(context)
+
+    console.log(pubs)
+    if (!pubs || pubs.length === 0) {
+        console.log("Loading...")
+        return <div></div>;
+    }
+    
+    const setCurrentPub = (pubs) => {
+        const currentPubPath = window.location.pathname.replace("/pubs/", "")
+        const currentPub = pubs.find((pubs) => pubs.url === currentPubPath)
+        console.log("currentPub", currentPub)
+        return currentPub
+    }
+
+    const currentPub = setCurrentPub(pubs)
+
     return (
         <div className="Pub col-8 align-self-center mt-4 text-start">
             <div className="container-fluid">
-            <img className="img-fluid" src="https://images.squarespace-cdn.com/content/v1/5e1cc8619d563e681552127e/1613921148496-7MBR4791BS8HX1Q4ZBXI/IMG_5835_crop.jpg" alt="Pub Image" />
-                <h1 className='mt-3'>The Princess Louise</h1>
+            <img className="img-fluid" src={currentPub.image} alt="Pub" />
+                <h1 className="display-5 text-light">{currentPub.name}</h1>
                 <body className="text-justify" style={{textAlign: "justify"}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    {currentPub.body}
                     <div className="row">
                         <div className="col-6">                            
-                            <h1 className="display-3 text-light">{props.name}</h1>
                         </div>
                     </div>
 

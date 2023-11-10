@@ -15,10 +15,10 @@
     "area": "Holborn",
     "location": "exact for Google maps API.",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "guinness": false,
     "year_est": 1872,
-    "museums_nearby": "my choice or some clever function to group? former in mvp",
+    "pubs_nearby": "my choice or some clever function to group? former in mvp",
     "tube_station_nearest": "hardcode to start"
+    // "dancy_at_night": false
   },
   {
     "id": 1,
@@ -36,9 +36,8 @@
     "area": "Holborn",
     "location": "exact for Google maps API.",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "guinness": false,
     "year_est": 1872,
-    "museums_nearby": "my choice or some clever function to group? former in mvp",
+    "pubs_nearby": "my choice or some clever function to group? former in mvp",
     "tube_station_nearest": "hardcode to start"
   },
   {
@@ -57,9 +56,8 @@
     "area": "Holborn",
     "location": "exact for Google maps API.",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "guinness": false,
     "year_est": 1872,
-    "museums_nearby": "my choice or some clever function to group? former in mvp",
+    "pubs_nearby": "my choice or some clever function to group? former in mvp",
     "tube_station_nearest": "hardcode to start"
   }
 ]
