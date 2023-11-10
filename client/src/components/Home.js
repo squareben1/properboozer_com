@@ -20,7 +20,7 @@ const Home = () => {
                 </p>
             </div>
             <div className='CardList col-10 align-self-center'>
-                <div class="row pt-3">
+                <div className="row pt-3">
                     <Link className="col-lg-4 mb-3 d-flex align-items-stretch" to="/pubs" >
                         <Card img_link={"https://i.postimg.cc/28PqLLQC/dotonburi-canal-osaka-japan-700.jpg"} title={"title"} text={"textetststststst"} />
                     </Link>

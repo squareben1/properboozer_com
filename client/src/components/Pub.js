@@ -6,7 +6,6 @@ import context from "../context/context"
 const Pub = () => {
     const pubs = useContext(context)
 
-    console.log(pubs)
     if (!pubs || pubs.length === 0) {
         console.log("Loading...")
         return <div></div>;
