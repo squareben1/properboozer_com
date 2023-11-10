@@ -9,7 +9,7 @@ const PubList = () => {
 
 
     return (
-        <div className='PubsList'>
+        <div className='PubsList mt-5'>
             {pubs.map((pub) => (
                 <PubPreview pub={pub} />
             ))}

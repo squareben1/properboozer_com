@@ -5,6 +5,9 @@
   #text-card {
     font-size: 1rem;
   }
+  #pubpreview-intro-text, #pubpreview-name-text {
+    font-size: 1rem;
+  }
 }
 body {
   margin: 0;
