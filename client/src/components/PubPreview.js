@@ -14,7 +14,7 @@ const PubPreview = (props) => {
 
     return (
         <div className="PubPreview ">
-            <div className="container col-12 col-lg-8 col-md-12 px-0 px-lg-4 py-1 ">
+            <div className="container col-12 col-lg-8 px-0 px-lg-4 py-1 ">
                 <div className={alternateFlowDirection()}>
                     <div className="col-sm-6 ">
                         <Link key={pubId} to={`/pubs/${pubUrl}`}>
