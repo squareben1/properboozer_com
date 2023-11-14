@@ -6,7 +6,7 @@ import { IoLocationOutline } from 'react-icons/io5'
 import { SiTransportforlondon } from 'react-icons/si'
 import { MdMuseum } from 'react-icons/md'
 
-
+import ImageCarousel from './ImageCarousel';
 
 // import { Link } from "react-scroll";
 
@@ -42,24 +42,24 @@ const Pub = () => {
                 <body className="text-justify" style={{ textAlign: "justify" }}>
 
                     <IconContext.Provider value={{ color: "black", className: "global-class-name", size: '1.5em' }}>
-                        <div className="row mb-2" style={{boxShadow: '1px 1px 1px black', margin: '0px 1px'}}> 
-                            <div className='col-6 col-lg-3 mb-3 d-flex flex-row'>
-                                <div className='col-2'>{guinnessLogo} </div>
+                        <div className="row pt-2" style={{ border: '1px solid #dadada', margin: '0px 1px' }}>
+                            <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
+                                <div className='col-2 me-2'>{guinnessLogo} </div>
                                 Guinness?
                             </div>
-                            <div className='col-6 col-lg-3 mb-3 d-flex flex-row'>
-                                <div className='col-2'>{<IoLocationOutline />}</div>
+                            <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
+                                <div className='col-2 me-2'>{<IoLocationOutline />}</div>
                                 {currentPub.area}
                             </div>
-                            <div className='col-6 col-lg-3 mb-3 d-flex flex-row'>
-                                <div className='col-2'>{<SiTransportforlondon />}</div>
+                            <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
+                                <div className='col-2 me-2'>{<SiTransportforlondon />}</div>
                                 {currentPub.tube_station_nearest}</div>
-                            <div className='col-6 col-lg-3 mb-3 d-flex flex-row'>
-                                <div className='col-2'>{<MdMuseum />}</div>
+                            <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
+                                <div className='col-2 me-2'>{<MdMuseum />}</div>
                                 {currentPub.museums_nearby}</div>
                         </div>
                     </IconContext.Provider>
-                    <div className='PubTopBulletPoints'>
+                    <div className='PubTopBulletPoints mt-3'>
                         <ul>
                             {currentPub.top_points.map((point) => (
                                 <div className="point">
@@ -71,23 +71,17 @@ const Pub = () => {
 
                     {/* facts and map */}
                     <div className="row">
-                        <div className="col-6">
-                            <ul>
-                                <li>Beautiful Victorian interior featuring privacy screens ('snob screens') to afford the well-heeled some privacy from the rabble in the main sections of the bar (the men's loos are cool and have the original urinals).</li>
-                                <li>A Sam Smiths pub - an English brewery that owns pubs all over London & serves their own drinks- so no Guinness, but often in beautiful buildings and usually less expensive than elsewhere.</li>
-                            </ul>
+                        <div className="col-12">
+                            <p>{currentPub.body}</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-12">
                             <div>
                                 <img className="img-fluid" src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_1920,c_limit/GoogleMapTA.jpg" alt="Map Image" />
                             </div>
                         </div>
                     </div>
-                    {currentPub.body}
-                    {/* footer text and images */}
                     <div className="row">
-                        <p>additional text</p>
-                        <img src="" alt="carousel" />
+                        {<ImageCarousel images={currentPub.images}/>}
                     </div>
                 </body>
 
