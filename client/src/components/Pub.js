@@ -5,6 +5,7 @@ import { TbBeerFilled, TbBeerOff } from "react-icons/tb";
 import { IoLocationOutline } from 'react-icons/io5'
 import { SiTransportforlondon } from 'react-icons/si'
 import { MdMuseum } from 'react-icons/md'
+import Map from './Map'
 
 import ImageCarousel from './ImageCarousel';
 
@@ -39,7 +40,7 @@ const Pub = () => {
             <div className="container-fluid">
                 <img className="img-fluid" src={currentPub.images[0]} alt="Pub" />
                 <h1 className="display-5 my-3">{currentPub.name}</h1>
-                <body className="text-justify" style={{ textAlign: "justify" }}>
+                <div className="text-justify" style={{ textAlign: "justify" }}>
 
                     <IconContext.Provider value={{ color: "black", className: "global-class-name", size: '1.5em' }}>
                         <div className="row pt-2" style={{ border: '1px solid #dadada', margin: '0px 1px' }}>
@@ -62,7 +63,7 @@ const Pub = () => {
                     <div className='PubTopBulletPoints mt-3'>
                         <ul>
                             {currentPub.top_points.map((point) => (
-                                <div className="point">
+                                <div key={point} className="point">
                                     <li>{point}</li>
                                 </div>
                             ))}
@@ -76,14 +77,15 @@ const Pub = () => {
                         </div>
                         <div className="col-12">
                             <div>
-                                <img className="img-fluid" src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_1920,c_limit/GoogleMapTA.jpg" alt="Map Image" />
+                                {/* <img className="img-fluid" src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_1920,c_limit/GoogleMapTA.jpg" alt="Map Image" /> */}
+                                <Map data={'data'}/>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         {<ImageCarousel images={currentPub.images}/>}
                     </div>
-                </body>
+                </div>
 
             </div>
 
