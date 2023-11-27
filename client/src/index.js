@@ -6,11 +6,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './index.css';
 
+
+// For some reason, Google Maps API does not work when React StrictMode is enabled.
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+//   <React.StrictMode>
     <App />
-  </React.StrictMode>
+//   </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
