@@ -7,7 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './index.css';
 
 
-// For some reason, Google Maps API does not work when React StrictMode is enabled.
+// For some reason, the React Google Maps API does not work when React StrictMode is enabled.
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

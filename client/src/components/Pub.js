@@ -77,7 +77,7 @@ const Pub = () => {
                         </div>
                         <div className="col-12">
                             <div>
-                                {/* <img className="img-fluid" src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_1920,c_limit/GoogleMapTA.jpg" alt="Map Image" /> */}
+                                {/* Can pass whatever info is needed from Pub to Map component */}
                                 <Map location={{lat: 51.51794091710391, lng: -0.1215879}}/>
                             </div>
                         </div>

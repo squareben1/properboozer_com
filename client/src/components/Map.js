@@ -16,19 +16,12 @@ const Map = (props) => {
         googleMapsApiKey: api_key,
         libraries,
     });
-
-    if (loadError) {
-        return <div>Error loading maps</div>;
-    }
-
-    if (!isLoaded) {
-        return <div>Loading maps</div>;
-    }
+    if (loadError) { return <div>Error loading maps</div>; }
+    if (!isLoaded) { return <div>Loading maps</div>; }
 
     return (
         <div className="Map">
             <GoogleMap mapContainerStyle={mapContainerStyle} zoom={15} center={center}>
-                <Marker position={center} />
                 <Marker position={center} />
             </GoogleMap>
         </div>
