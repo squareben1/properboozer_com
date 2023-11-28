@@ -15,15 +15,28 @@ import './App.css';
 function App() {
   const [pubs, setPubs] = useState([])
 
-  const getpubs = async () => {
+  const getPubs = async () => {
     const res = await fetch('http://localhost:8000/pubs')
     const resPubs = await res.json()
+    jsonisePubJsonFields(resPubs)
+
+    console.log("resPubs: ", resPubs)
+
     setPubs(resPubs)
   }
 
   useEffect(() => {
-    getpubs()
+    getPubs()
   }, [])
+
+  const jsonisePubJsonFields = (pubRes) => {
+    // Parse JSON objects stored as strings in DB.
+    for (let pub of pubRes) {
+      pub.images = JSON.parse(pub.images)
+      pub.top_points = JSON.parse(pub.top_points)
+    }
+
+  }
 
   const { Provider } = context
 
