@@ -1,22 +1,22 @@
 [
   {
     "id": 0,
-    "name": "The Princess Louise",
-    "url": "the-princess-louise",
+    "name": "The British Museum",
+    "url": "the-british-museum",
     "images": [
-      "https://images.squarespace-cdn.com/content/v1/5e1cc8619d563e681552127e/1613921148496-7MBR4791BS8HX1Q4ZBXI/IMG_5835_crop.jpg"
+      "img.jpg"
     ],
-    "intro": "pub pub pub",
+    "intro": "intro string",
     "top_points": [
-      "Beautfiul Vicorian Interior",
+      "Amazing museum",
       "point two",
       "point three"
     ],
     "area": "Holborn",
-    "location": "exact for Google maps API.",
+    "location": "exact for Google maps API?",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "year_est": 1872,
-    "pubs_nearby": "my choice or some clever function to group? former in mvp",
+    "pubs_nearby": "many to many? ref to pubs database record/s?",
     "tube_station_nearest": "hardcode to start"
   },
   {
