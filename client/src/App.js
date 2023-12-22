@@ -8,12 +8,14 @@ import {
 import context from "./context/context"
 import NavBar from "./components/NavBar";
 import Home from './components/Home';
-import PubList from './components/PubList';
+import PlaceList from './components/PlaceList';
 import Pub from "./components/Pub";
 import './App.css';
 
 function App() {
   const [pubs, setPubs] = useState([])
+  const [museums, setMuseums] = useState([])
+  // const [places, setPlaces] = useState([])
 
   const getPubs = async () => {
     const res = await fetch('http://localhost:8000/pubs')
@@ -25,30 +27,43 @@ function App() {
     setPubs(resPubs)
   }
 
+  const getMuseums = async () => {
+    const res = await fetch('http://localhost:8000/museums')
+    const resMuseums = await res.json()
+    jsonisePubJsonFields(resMuseums)
+
+    console.log("resMuseums: ", resMuseums)
+
+    setMuseums(resMuseums)
+  }
+
   useEffect(() => {
     getPubs()
+    getMuseums()
   }, [])
 
-  const jsonisePubJsonFields = (pubRes) => {
+  const jsonisePubJsonFields = (placeRes) => {
     // Parse JSON objects stored as strings in DB.
-    for (let pub of pubRes) {
-      pub.images = JSON.parse(pub.images)
-      pub.top_points = JSON.parse(pub.top_points)
+    console.log("jsonise:", placeRes)
+    for (let place of placeRes) {
+      place.images = JSON.parse(place.images)
+      place.top_points = JSON.parse(place.top_points)
     }
-
   }
 
   const { Provider } = context
 
   return (
-    <Provider value={pubs}>
+    <Provider value={{ pubs, museums }}>
       <Router>
         <div className="App d-flex flex-column h-100 lead">
           <NavBar />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/pubs" element={<PubList />} />
+            <Route exact path="/pubs" element={<PlaceList place_type={"pubs"} />} />
             <Route path="/pubs/:url" element={<Pub />} />
+            <Route exact path="/museums" element={<PlaceList place_type={"museums"} />} />
+            {/* <Route path="/museums/:url" element={<Museum />} /> */}
           </Routes>
         </div>
       </Router>

@@ -10,10 +10,6 @@ import ImageCarousel from './ImageCarousel';
 
 // import { Link } from "react-scroll";
 
-
-
-
-
 const Pub = () => {
     const pubs = useContext(context)
 
@@ -80,8 +76,8 @@ const Pub = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        {<ImageCarousel images={currentPub.images}/>}
+                    <div className="row my-3">
+                        {<ImageCarousel images={currentPub.images} />}
                     </div>
                 </body>
 
