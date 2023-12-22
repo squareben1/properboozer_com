@@ -22,13 +22,13 @@ const Home = () => {
             <div className='CardList col-8 col-lg-10 align-self-center'>
                 <div className="row pt-3">
                     <Link className="col-lg-4 mb-3 d-flex align-items-stretch" to="/pubs" >
-                        <Card img_link={"https://i.postimg.cc/28PqLLQC/dotonburi-canal-osaka-japan-700.jpg"} title={"title"} text={"textetststststst"} />
+                        <Card img_link={"https://assets.londonist.com/uploads/2014/08/i875/sherlock-holmes.png"} title={"Pubs"} text={"Some of my favourite old pubs in London"} />
                     </Link>
-                    <Link className="col-lg-4 mb-3 d-flex align-items-stretch" to="/pubs" >
-                        <Card img_link={"https://i.postimg.cc/28PqLLQC/dotonburi-canal-osaka-japan-700.jpg"} title={"title"} text={"textetststststst"} />
+                    <Link className="col-lg-4 mb-3 d-flex align-items-stretch" to="/museums" >
+                        <Card img_link={"https://vanda-production-assets.s3.amazonaws.com/2020/07/07/12/28/24/16398b2a-8faa-4abe-8155-c22e6186a930/2006AB6677-Madejski-Garden-front-HERO.jpg"} title={"Museums"} text={"Some of my favourite museums in London"} />
                     </Link>
-                    <Link className="col-lg-4 mb-3 d-flex align-items-stretch" to="/pubs" >
-                        <Card img_link={"https://i.postimg.cc/28PqLLQC/dotonburi-canal-osaka-japan-700.jpg"} title={"title"} text={"textetststststst"} />
+                    <Link className="col-lg-4 mb-3 d-flex align-items-stretch" to="/" >
+                        <Card img_link={"https://www.thesevenstars1602.co.uk/images/thesevenstars/street_royal_justice_court_the_seven_stars.jpg"} title={"Historic Pub Crawl"} text={"Coming Soon..."} />
                     </Link>
                     {/* <Card img_link={"https://i.postimg.cc/28PqLLQC/dotonburi-canal-osaka-japan-700.jpg"} title={"title"} text={"textetstststststtextetstststststtextetstststststtextetstststststtextetstststststtextetstststststtextetstststststtextetststststst"} />
                     <Card img_link={"https://i.postimg.cc/28PqLLQC/dotonburi-canal-osaka-japan-700.jpg"} title={"title"} text={"textetstststststtextetstststststtextetstststststtextetstststststtextetstststststtextetstststststtextetstststststtextetststststst"} /> */}

@@ -9,7 +9,7 @@ import context from "./context/context"
 import NavBar from "./components/NavBar";
 import Home from './components/Home';
 import PlaceList from './components/PlaceList';
-import Pub from "./components/Pub";
+import Place from "./components/Place";
 import './App.css';
 
 function App() {
@@ -61,9 +61,9 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/pubs" element={<PlaceList place_type={"pubs"} />} />
-            <Route path="/pubs/:url" element={<Pub />} />
+            <Route path="/pubs/:url" element={<Place place_type={"pubs"} />} />
             <Route exact path="/museums" element={<PlaceList place_type={"museums"} />} />
-            {/* <Route path="/museums/:url" element={<Museum />} /> */}
+            <Route path="/museums/:url" element={<Place place_type={"museums"} />} />
           </Routes>
         </div>
       </Router>
