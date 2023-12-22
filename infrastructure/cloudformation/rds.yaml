@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+  DBInstanceIdentifier:
+    Type: String
+    Description: RDS instance identifier
+    Default: properboozer-rds
+  DBName:
+    Type: String
+    Description: Name of the initial database
+    Default: properboozerDB
+  DBUsername:
+    Type: String
+    Description: Master username for the database
+    Default: admin
+  DBPassword:
+    Type: String
+    Description: Master password for the database
+    NoEcho: true
+
+Resources:
+  DBInstance:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      DBInstanceIdentifier: !Ref DBInstanceIdentifier
+      AllocatedStorage: 20  # Adjust based on your estimated data size
+      DBInstanceClass: db.t3.micro  # Adjust instance size based on the estimated number of records
+      Engine: postgres
+      EngineVersion: 13.4
+      MasterUsername: !Ref DBUsername
+      MasterUserPassword: !Ref DBPassword
+      DBName: !Ref DBName
+      BackupRetentionPeriod: 7
+      MultiAZ: false
+      PubliclyAccessible: false
+      VPCSecurityGroups:
+        - !GetAtt DBSecurityGroup.GroupId
+
+  DBSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Security group for RDS
+      VpcId: vpc-09f7a261
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          SourceSecurityGroupName: !Sub '${DBName}-sg'
+
