@@ -43,17 +43,26 @@ const Place = (props) => {
 
     const isPubOrMuseumNearby = () => {
         if (currentPlace.museums_nearby) {
+            console.log("currentPlace.museums_nearby", currentPlace.museums_nearby)
+            const museumsArray = JSON.parse(currentPlace.museums_nearby);
             return (
                 <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
                     <div className='col-2 me-2'>{<MdMuseum />}</div>
-                    {currentPlace.museums_nearby}
+                    {museumsArray.map((museum) => (
+                        <ul>{museum}</ul>
+                    ))}
                 </div>
             )
         } else if (currentPlace.pubs_nearby) {
+            const pubsArray = JSON.parse(currentPlace.pubs_nearby);
+            console.log("pubsArray", pubsArray)
             return (
                 <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
                     <div className='col-2 me-2'>{<IoIosBeer />}</div>
-                    {currentPlace.pubs_nearby}
+                    {pubsArray.map((pub) => (
+                        <ul>{pub}</ul>
+                    ))}
+
                 </div>
             )
         }
@@ -104,7 +113,7 @@ const Place = (props) => {
                             <p>{currentPlace.body}</p>
                         </div>
                         <div className="col-12">
-                            <Map location={{lat: 51.51794091710391, lng: -0.1215879}}/>
+                            <Map location={{ lat: 51.51794091710391, lng: -0.1215879 }} />
                             {/* <div>
                                 <img className="img-fluid" src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/w_1920,c_limit/GoogleMapTA.jpg" alt="Map Image" />
                             </div> */}
