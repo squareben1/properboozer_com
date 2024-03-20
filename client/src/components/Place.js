@@ -41,27 +41,32 @@ const Place = (props) => {
         }
     }
 
+    const getPlaceList = (placeList) => {
+        const placesArray = JSON.parse(placeList);
+        console.log("placesArray", placesArray)
+        return (
+            <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
+                <div className='col-2 me-2'>{<IoIosBeer />}</div>
+                {placesArray.map((place) => (
+                    <ul>{place}</ul>
+                ))}
+            </div>
+        )
+    }
+
     const isPubOrMuseumNearby = () => {
         if (currentPlace.museums_nearby) {
-            console.log("currentPlace.museums_nearby", currentPlace.museums_nearby)
-            const museumsArray = JSON.parse(currentPlace.museums_nearby);
             return (
                 <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
                     <div className='col-2 me-2'>{<MdMuseum />}</div>
-                    {museumsArray.map((museum) => (
-                        <ul>{museum}</ul>
-                    ))}
+                    {getPlaceList(currentPlace.museums_nearby)}
                 </div>
             )
         } else if (currentPlace.pubs_nearby) {
-            const pubsArray = JSON.parse(currentPlace.pubs_nearby);
-            console.log("pubsArray", pubsArray)
             return (
                 <div className='col-6 col-lg-3 mb-2 d-flex flex-row'>
                     <div className='col-2 me-2'>{<IoIosBeer />}</div>
-                    {pubsArray.map((pub) => (
-                        <ul>{pub}</ul>
-                    ))}
+                    {getPlaceList(currentPlace.pubs_nearby)}
 
                 </div>
             )
